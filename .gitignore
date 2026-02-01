@@ -1,0 +1,27 @@
+# Java
+*.class
+*.jar
+*.war
+*.ear
+hs_err_pid*
+replay_pid*
+
+# Java build directories
+build/
+out/
+bin/
+
+# C
+*.o
+*.out
+*.exe
+*.a
+*.so
+*.dylib
+clox
+
+# macOS
+.DS_Store
+
+# VSCode
+.vscode/
