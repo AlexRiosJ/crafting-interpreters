@@ -99,6 +99,23 @@ class Scanner {
           // A comment goes until the end of the line.
           while (peek() != '\n' && !isAtEnd())
             advance();
+        } else if (match('*')) {
+          int startLine = line;
+
+          while (!isAtEnd()) {
+            if (peek() == '*' && peekNext() == '/') {
+              advance();
+              advance();
+              return;
+            }
+
+            if (peek() == '\n')
+              line++;
+
+            advance();
+          }
+
+          Lox.error(startLine, "Unexpected end of comment.");
         } else {
           addToken(TokenType.SLASH);
         }
