@@ -37,8 +37,12 @@ public class Lox {
     for (;;) {
       System.out.print("> ");
       String line = reader.readLine();
-      if (line == null)
+
+      if (line == null) {
+        System.out.println();
         break;
+      }
+
       run(line);
       hadError = false;
     }
